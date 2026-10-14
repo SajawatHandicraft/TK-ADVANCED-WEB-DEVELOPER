@@ -837,26 +837,157 @@ header .navlinks a:hover {
 </section>
 </main>
 
-<footer>
- <div class="container footer-row">
-  <a class="logo" href="#home">TK<span>.</span>ADVANCED</a>
-  <p>Designed with creativity & code · © <span id="year"></span> Advanced Web Developer</p>
-  <a href="https://www.instagram.com/taufiq___38/" target="_blank" rel="noopener">Instagram ↗</a>
- </div>
 
-<p style="text-align:center; margin:20px 0;">
-  <a href="terms.html"
-     style="color:#a47b2d; text-decoration:none; font-weight:600;">
-    Terms &amp; Conditions
-    
-<a href="privacy.html"
-   style="color:#a47b2d; text-decoration:none; font-weight:600; margin-left:16px;">
-  Privacy Policy
-</a>
-  </a>
-</p>
+<footer class="tk-premium-footer">
+  <div class="container tk-footer-grid">
 
+    <div class="tk-footer-brand">
+      <a class="logo" href="#home">
+        TK<span>.</span>ADVANCED
+      </a>
+      <p>
+        Creative Design. Smart Development.
+        Building Digital Experiences.
+      </p>
+      <a
+        class="tk-footer-instagram"
+        href="https://www.instagram.com/taufiq___38/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram ↗
+      </a>
+    </div>
+
+    <div class="tk-footer-column">
+      <h3>Quick Links</h3>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="tk-footer-column">
+      <h3>Legal</h3>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+
+  </div>
+
+  <div class="container tk-footer-bottom">
+    <p>
+      Designed with creativity &amp; code · ©
+      <span id="year"></span> TK Advanced Web Developer
+    </p>
+    <a href="#home">Back to top ↑</a>
+  </div>
 </footer>
+
+<style>
+  .tk-premium-footer {
+    background: #100e0a;
+    color: #d8cfbd;
+    border-top: 1px solid #9b762f;
+    padding: 48px 0 18px;
+    margin-top: 40px;
+  }
+
+  .tk-footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 36px;
+    padding-bottom: 32px;
+  }
+
+  .tk-footer-brand .logo {
+    color: #f7f0e2;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 22px;
+  }
+
+  .tk-footer-brand .logo span {
+    color: #d2ad5c;
+  }
+
+  .tk-footer-brand p {
+    color: #b9ae98;
+    max-width: 320px;
+    line-height: 1.8;
+  }
+
+  .tk-footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tk-footer-column h3 {
+    color: #d2ad5c;
+    font-size: 15px;
+    margin: 0 0 6px;
+  }
+
+  .tk-footer-column a,
+  .tk-footer-instagram,
+  .tk-footer-bottom a {
+    color: #d8cfbd;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .tk-footer-column a:hover,
+  .tk-footer-instagram:hover,
+  .tk-footer-bottom a:hover {
+    color: #e2bd68;
+  }
+
+  .tk-footer-instagram {
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .tk-footer-bottom {
+    border-top: 1px solid #393024;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .tk-footer-bottom p {
+    color: #a99e8b;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  @media (max-width: 650px) {
+    .tk-footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 28px 18px;
+    }
+
+    .tk-footer-brand {
+      grid-column: 1 / -1;
+    }
+
+    .tk-footer-bottom {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+  
 
 <div class="social-float" aria-label="Social links">
  <a class="social instagram" href="https://www.instagram.com/taufiq___38/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">◎</a>
