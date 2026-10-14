@@ -6,17 +6,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080812">
 <meta name="description" content="TK Advanced Web Developer — premium websites, creative design, e-commerce and digital experiences.">
-<title>TK Advanced Web Developer | Digital Beyond Limits</title>
+<title> Advanced Web Developer | Digital Beyond Limits</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#080812;--panel:#111121;--text:#f5f4ff;
-  --muted:#aaa9c4;--purple:#a855f7;--cyan:#45e6ff;
-  --pink:#ff4fbc;--line:rgba(255,255,255,.11);
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    radial-gradient(ellipse at 15% 10%,#d5ad6020,transparent 35%),
+    radial-gradient(ellipse at 90% 45%,#b58a3a15,transparent 35%);
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{
@@ -129,11 +136,15 @@ section{padding:100px 0}
 h2{font:700 clamp(32px,4.3vw,51px)/1.1 "Space Grotesk";letter-spacing:-2px}
 .section-head p{max-width:430px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
 .card{
-  background:linear-gradient(145deg,#151528c9,#0f0f1bc9);
-  border:1px solid var(--line);border-radius:20px;padding:25px;
+  background:linear-gradient(145deg,#ffffff,#f7f2e8);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
   transition:transform .3s,border-color .3s,box-shadow .3s;
 }
+
 .card:hover{transform:translateY(-7px);border-color:#45e6ff70;box-shadow:0 18px 45px #0004}
 .icon{
  width:48px;height:48px;display:grid;place-items:center;border-radius:14px;
@@ -462,7 +473,7 @@ footer p{font-size:12px;color:var(--muted)}
 <footer>
  <div class="container footer-row">
   <a class="logo" href="#home">TK<span>.</span>ADVANCED</a>
-  <p>Designed with creativity & code · © <span id="year"></span> TK Advanced Web Developer</p>
+  <p>Designed with creativity & code · © <span id="year"></span> Advanced Web Developer</p>
   <a href="https://www.instagram.com/taufiq___38/" target="_blank" rel="noopener">Instagram ↗</a>
  </div>
 </footer>
