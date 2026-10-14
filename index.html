@@ -1,1 +1,552 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070b16">
+<meta name="description" content="TK Advanced Web Developer builds modern, responsive and premium websites for businesses, brands and startups.">
+<meta name="robots" content="index,follow">
+<title>TK Advanced Web Developer | Websites Beyond Ordinary</title>
+
+<style>
+:root {
+  --bg:#070b16;
+  --panel:#0e1527;
+  --text:#f5f7ff;
+  --muted:#a2aec6;
+  --blue:#4f8cff;
+  --cyan:#42e8ff;
+  --border:rgba(133,166,255,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:var(--bg);color:var(--text);
+  line-height:1.65;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.container{width:min(1160px,92%);margin:auto}
+.gradient{
+  background:linear-gradient(100deg,var(--cyan),#7c8dff 55%,#c5a3ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,11,22,.86);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:19px;font-weight:900;letter-spacing:-.5px}
+.logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:25px;align-items:center}
+.nav-links a{font-size:13px;color:#c0cbe0;transition:.2s}
+.nav-links a:hover{color:var(--cyan)}
+.menu-btn{display:none;background:none;color:white;border:1px solid var(--border);padding:7px 11px;border-radius:9px;cursor:pointer}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 20px;border-radius:12px;font-weight:750;font-size:14px;
+  border:1px solid transparent;cursor:pointer;transition:transform .25s,box-shadow .25s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{color:#06101c;background:linear-gradient(110deg,var(--cyan),#7794ff);box-shadow:0 8px 30px #438cff28}
+.btn-secondary{border-color:var(--border);background:#ffffff06;color:var(--text)}
+.hero{position:relative;padding:105px 0 90px;overflow:hidden}
+.hero:before,.hero:after{
+ content:"";position:absolute;border-radius:50%;filter:blur(90px);
+ pointer-events:none;z-index:-1;
+}
+.hero:before{width:400px;height:400px;background:#165bdb26;top:0;left:-160px}
+.hero:after{width:350px;height:350px;background:#13d9f51a;right:-100px;bottom:0}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.eyebrow{
+ display:inline-flex;gap:9px;align-items:center;padding:7px 12px;
+ border:1px solid var(--border);background:#ffffff06;border-radius:30px;
+ color:#cbd8ef;font-size:12px;margin-bottom:24px
+}
+.dot{width:7px;height:7px;background:#4dffc0;border-radius:50%;box-shadow:0 0 12px #4dffc0}
+h1{font-size:clamp(42px,6.3vw,76px);line-height:1.05;letter-spacing:-3px;margin-bottom:24px}
+.hero p{max-width:590px;color:var(--muted);font-size:17px;margin-bottom:30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:22px;flex-wrap:wrap;margin-top:32px;color:#b5c1d8;font-size:12px}
+.visual{position:relative;min-width:0}
+.orb{
+  position:absolute;width:230px;height:230px;border-radius:50%;
+  background:linear-gradient(140deg,#4f8cff30,#42e8ff08);
+  border:1px solid #66aaff25;filter:blur(.2px);
+  top:5%;left:20%;animation:float 7s ease-in-out infinite;
+}
+.code-card{
+  position:relative;z-index:1;border:1px solid #6c9aff35;
+  background:linear-gradient(145deg,#121d34ee,#0b1120f2);
+  border-radius:22px;padding:24px;box-shadow:0 25px 80px #0007;
+  transform:perspective(900px) rotateY(-5deg);
+}
+.card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px;color:#aebcda;font-size:12px}
+.lights{display:flex;gap:5px}.lights i{width:7px;height:7px;border-radius:50%;background:#4f8cff}
+.mock-title{font-size:25px;line-height:1.2;font-weight:850;margin-bottom:12px}
+.mock-desc{font-size:12px;color:var(--muted);margin-bottom:24px}
+.mock-bars{display:grid;gap:10px}
+.mock-bar{height:10px;background:#ffffff0b;border-radius:10px;overflow:hidden}
+.mock-bar span{height:100%;display:block;border-radius:10px;background:linear-gradient(90deg,#438cff,#42e8ff)}
+.mock-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:24px}
+.mock-stats div{padding:12px 8px;border:1px solid var(--border);border-radius:10px;text-align:center}
+.mock-stats strong{display:block;color:var(--cyan);font-size:18px}
+.mock-stats small{color:var(--muted);font-size:10px}
+.float-tag{position:absolute;z-index:2;padding:12px 15px;border:1px solid var(--border);border-radius:12px;background:#101a30;box-shadow:0 12px 40px #0005;font-size:12px}
+.tag-one{top:-18px;right:-12px;animation:float 5s ease-in-out infinite}
+.tag-two{bottom:-18px;left:-18px;animation:float 6s ease-in-out infinite reverse}
+section{padding:86px 0}
+.section-head{max-width:690px;margin-bottom:40px}
+.kicker{text-transform:uppercase;letter-spacing:2px;color:var(--cyan);font-size:11px;font-weight:800;margin-bottom:12px}
+h2{font-size:clamp(30px,4vw,45px);line-height:1.15;letter-spacing:-1.5px;margin-bottom:15px}
+.section-head p{color:var(--muted);font-size:15px}
+.stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats strong{display:block;font-size:22px;color:var(--cyan)}
+.stats span{font-size:12px;color:var(--muted)}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.panel{
+  border:1px solid var(--border);background:linear-gradient(145deg,#111a2c,#0a1020);
+  border-radius:18px;padding:25px;transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.panel:hover{transform:translateY(-5px);border-color:#53bfff65;box-shadow:0 15px 45px #0003}
+.icon{
+  width:45px;height:45px;display:grid;place-items:center;border-radius:13px;
+  border:1px solid #4f8cff35;background:#4f8cff12;color:var(--cyan);
+  font-size:22px;margin-bottom:20px
+}
+.panel h3{font-size:18px;margin-bottom:9px}
+.panel p{font-size:13px;color:var(--muted)}
+.features{list-style:none;display:grid;gap:10px;margin-top:18px}
+.features li{font-size:12px;color:#c1cde1}
+.features li:before{content:"✓";color:var(--cyan);margin-right:9px;font-weight:900}
+.alt{background:#0a1020;border-block:1px solid var(--border)}
+.project-art{
+ height:155px;border:1px solid var(--border);border-radius:13px;margin-bottom:20px;
+ display:grid;place-items:center;overflow:hidden;position:relative;
+ background:radial-gradient(circle at 50% 40%,#438cff32,transparent 60%),#080e1c;
+}
+.project-window{width:76%;height:105px;border:1px solid #8bb7ff55;border-radius:9px;padding:10px;background:#101b31}
+.project-window i{display:block;height:5px;background:#ffffff14;border-radius:4px;margin:7px 0;width:75%}
+.project-window i:first-child{background:#55d9ff88;width:35%}
+.project-window i:last-child{width:90%}
+.project-meta{font-size:10px;color:var(--cyan);margin-bottom:7px;text-transform:uppercase;letter-spacing:1px}
+.project-card h3{font-size:18px;margin-bottom:8px}
+.project-card p{font-size:13px;color:var(--muted)}
+.price{font-size:31px;font-weight:900;letter-spacing:-1px;margin:15px 0 5px}
+.price small{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:0}
+.price-note{font-size:11px;color:var(--muted);margin-bottom:18px}
+.price-card.featured{border-color:#56c9ff85;box-shadow:0 0 35px #408cff14;position:relative}
+.recommended{display:inline-block;background:#153d56;color:#8beaff;border-radius:20px;padding:5px 9px;font-size:10px;margin-bottom:12px}
+.price-card .btn{width:100%;margin-top:22px}
+.process-num{font-size:32px;font-weight:900;color:#294d7d;margin-bottom:17px}
+.faq-item{border-bottom:1px solid var(--border);padding:19px 0}
+.faq-item summary{cursor:pointer;font-weight:700;font-size:15px}
+.faq-item p{color:var(--muted);font-size:13px;padding-top:12px}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}
+.contact-info{display:grid;gap:14px;margin-top:25px}
+.contact-line{padding:15px;border:1px solid var(--border);border-radius:12px;background:#ffffff04}
+.contact-line small{display:block;color:var(--muted);font-size:11px}
+.contact-line strong{font-size:14px;overflow-wrap:anywhere}
+form{display:grid;gap:14px}
+.field{display:grid;gap:6px}
+label{font-size:12px;color:#cbd7ea}
+input,select,textarea{
+  width:100%;padding:13px 14px;border-radius:10px;
+  border:1px solid var(--border);background:#080e1b;color:var(--text);outline:none;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--cyan)}
+select option{background:#10172a}
+textarea{min-height:110px;resize:vertical}
+.form-note{font-size:11px;color:var(--muted)}
+.cta{padding:55px 0}
+.cta-inner{
+ display:flex;align-items:center;justify-content:space-between;gap:25px;
+ padding:35px;border:1px solid #58bfff3a;border-radius:22px;
+ background:radial-gradient(ellipse at right,#1c5b8538,transparent 60%),#0e1728
+}
+.cta-inner p{font-size:13px;color:var(--muted);margin-top:7px}
+footer{border-top:1px solid var(--border);padding:27px 0;color:var(--muted);font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;align-items:center}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap}
+.whatsapp{
+ position:fixed;right:20px;bottom:20px;z-index:90;
+ display:flex;align-items:center;gap:9px;padding:13px 17px;border-radius:50px;
+ background:#20c86b;color:#06180d;font-weight:850;font-size:13px;
+ box-shadow:0 8px 30px #20c86b35;transition:.2s
+}
+.whatsapp:hover{transform:translateY(-3px)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+@media(max-width:850px){
+ .hero-grid{grid-template-columns:1fr;gap:55px}
+ .hero{padding:75px 0}
+ .visual{max-width:570px;width:100%;margin:auto}
+ .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .contact-grid{grid-template-columns:1fr}
+ .nav-links{gap:13px}
+}
+@media(max-width:600px){
+ .nav{height:66px}
+ .menu-btn{display:block}
+ .nav-links{
+  display:none;position:absolute;top:66px;left:0;right:0;
+  padding:20px 5%;background:#0a1020;border-bottom:1px solid var(--border);
+  flex-direction:column;align-items:stretch;gap:0
+ }
+ .nav-links.open{display:flex}
+ .nav-links a{padding:12px 0;border-bottom:1px solid #ffffff0b}
+ .nav-links .btn{margin-top:12px}
+ h1{letter-spacing:-2px}
+ .hero p{font-size:15px}
+ section{padding:65px 0}
+ .grid-3{grid-template-columns:1fr}
+ .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:25px}
+ .code-card{padding:18px;transform:none}
+ .tag-one{right:-3px}
+ .tag-two{left:-3px}
+ .cta-inner{padding:25px;align-items:flex-start;flex-direction:column}
+ .whatsapp{right:12px;bottom:12px;padding:12px 14px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">TK <span>ADVANCED</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#work">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#contact" class="btn btn-primary">Start a Project ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="reveal">
+    <div class="eyebrow"><span class="dot"></span> DIGITAL EXPERIENCES · BUILT FOR GROWTH</div>
+    <h1>We Build<br>Websites <span class="gradient">Beyond<br>Ordinary.</span></h1>
+    <p>Modern websites for ambitious businesses. Premium design, responsive experiences and thoughtful functionality to help your brand stand out online.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Let's Build Your Website ↗</a>
+      <a class="btn btn-secondary" href="#work">Explore Our Work ↓</a>
+    </div>
+    <div class="trust">
+      <span>✦ Modern UI/UX</span><span>✦ Mobile First</span><span>✦ Performance Focused</span>
+    </div>
+  </div>
+  <div class="visual reveal">
+    <div class="orb"></div>
+    <div class="float-tag tag-one">✦ Premium UI Design</div>
+    <div class="code-card">
+      <div class="card-top"><span class="lights"><i></i><i></i><i></i></span><span>tk / digital-studio</span></div>
+      <div class="mock-title">Ideas into<br><span class="gradient">Digital Reality.</span></div>
+      <div class="mock-desc">DESIGN · DEVELOPMENT · EXPERIENCE</div>
+      <div class="mock-bars">
+        <div class="mock-bar"><span style="width:91%"></span></div>
+        <div class="mock-bar"><span style="width:73%"></span></div>
+        <div class="mock-bar"><span style="width:84%"></span></div>
+      </div>
+      <div class="mock-stats">
+        <div><strong>UI</strong><small>Design</small></div>
+        <div><strong>UX</strong><small>Experience</small></div>
+        <div><strong>Web</strong><small>Development</small></div>
+      </div>
+    </div>
+    <div class="float-tag tag-two">⚡ Crafted for the modern web</div>
+  </div>
+ </div>
+</section>
+
+<div class="stats">
+ <div class="container stats-grid">
+  <div><strong>01</strong><span>Client-first approach</span></div>
+  <div><strong>UI/UX</strong><span>Thoughtful design</span></div>
+  <div><strong>24/7</strong><span>Website availability*</span></div>
+  <div><strong>100%</strong><span>Focus on your brief</span></div>
+ </div>
+</div>
+
+<section id="services">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="kicker">What we do</div>
+   <h2>Digital solutions for <span class="gradient">your next move.</span></h2>
+   <p>From your first online presence to a premium business website, choose the solution that fits your goals.</p>
+  </div>
+  <div class="grid-3">
+   <article class="panel reveal">
+    <div class="icon">✧</div><h3>Website Design</h3>
+    <p>Clean, modern layouts that represent your business and make a strong first impression.</p>
+    <ul class="features"><li>Custom visual direction</li><li>Responsive layouts</li><li>Clear calls to action</li></ul>
+   </article>
+   <article class="panel reveal">
+    <div class="icon">⌘</div><h3>Web Development</h3>
+    <p>Fast, accessible and responsive websites built around your requirements.</p>
+    <ul class="features"><li>Mobile-first development</li><li>Interactive sections</li><li>Cross-device testing</li></ul>
+   </article>
+   <article class="panel reveal">
+    <div class="icon">↗</div><h3>Business Websites</h3>
+    <p>Professional online homes for local businesses, brands and growing companies.</p>
+    <ul class="features"><li>Services and pricing</li><li>Contact and enquiry forms</li><li>WhatsApp integration</li></ul>
+   </article>
+   <article class="panel reveal">
+    <div class="icon">▦</div><h3>Portfolio Websites</h3>
+    <p>Showcase your work, skills and projects in a polished, memorable format.</p>
+    <ul class="features"><li>Project galleries</li><li>About and skills sections</li><li>Professional presentation</li></ul>
+   </article>
+   <article class="panel reveal">
+    <div class="icon">⌕</div><h3>SEO Foundations</h3>
+    <p>Give search engines useful page titles, descriptions and clear website structure.</p>
+    <ul class="features"><li>Meta descriptions</li><li>Semantic page structure</li><li>Search Console guidance</li></ul>
+   </article>
+   <article class="panel reveal">
+    <div class="icon">⚙</div><h3>Website Improvements</h3>
+    <p>Refresh an existing site with better layouts, clearer navigation and refined details.</p>
+    <ul class="features"><li>Layout improvements</li><li>Content updates</li><li>Usability checks</li></ul>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="alt" id="work">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="kicker">Selected concepts</div>
+   <h2>Ideas designed to <span class="gradient">stand out.</span></h2>
+   <p>These are illustrative demo concepts showing the types of websites we can create. They are not presented as completed client projects.</p>
+  </div>
+  <div class="grid-3">
+   <article class="panel project-card reveal">
+    <div class="project-art"><div class="project-window"><i></i><i></i><i></i><i></i></div></div>
+    <div class="project-meta">Demo concept 01 · Business</div>
+    <h3>Business Website</h3>
+    <p>A polished online presence with services, brand story, enquiry options and contact details.</p>
+   </article>
+   <article class="panel project-card reveal">
+    <div class="project-art" style="background:radial-gradient(circle at 50%,#7e55ff38,transparent 65%),#080e1c"><div class="project-window"><i style="background:#b89cff88"></i><i style="width:45%"></i><i></i><i></i></div></div>
+    <div class="project-meta">Demo concept 02 · Creative</div>
+    <h3>Creative Portfolio</h3>
+    <p>A modern showcase for creators, developers and freelancers to present their work.</p>
+   </article>
+   <article class="panel project-card reveal">
+    <div class="project-art" style="background:radial-gradient(circle at 50%,#24d8a92a,transparent 65%),#080e1c"><div class="project-window"><i style="background:#55e5bd88"></i><i style="width:85%"></i><i style="width:55%"></i><i></i></div></div>
+    <div class="project-meta">Demo concept 03 · Commerce</div>
+    <h3>Product Catalogue</h3>
+    <p>A product-led experience for showcasing items and directing customers to enquire or order.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="pricing">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="kicker">Simple starting packages</div>
+   <h2>Choose your <span class="gradient">starting point.</span></h2>
+   <p>These are starting prices in INR. Final quotes depend on page count, design complexity, content and required functionality.</p>
+  </div>
+  <div class="grid-3">
+   <article class="panel price-card reveal">
+    <h3>Starter</h3><p>For a simple online presence.</p>
+    <div class="price">₹1,499<small> onwards</small></div>
+    <div class="price-note">Final scope confirmed before work starts.</div>
+    <ul class="features"><li>Single-page website</li><li>Mobile-friendly layout</li><li>Basic contact section</li><li>Basic SEO setup</li></ul>
+    <a class="btn btn-secondary" href="#contact" data-package="Starter">Choose Starter</a>
+   </article>
+   <article class="panel price-card reveal">
+    <h3>Professional</h3><p>For businesses ready to grow.</p>
+    <div class="price">₹3,999<small> onwards</small></div>
+    <div class="price-note">Final scope confirmed before work starts.</div>
+    <ul class="features"><li>Multiple content sections</li><li>Services and pricing</li><li>Enquiry form or WhatsApp</li><li>Responsive styling</li><li>SEO foundations</li></ul>
+    <a class="btn btn-secondary" href="#contact" data-package="Professional">Choose Professional</a>
+   </article>
+   <article class="panel price-card featured reveal">
+    <span class="recommended">ADVANCED EXPERIENCE</span>
+    <h3>Advanced</h3><p>For a distinctive premium website.</p>
+    <div class="price">₹5,999<small> onwards</small></div>
+    <div class="price-note">Complex functionality quoted separately.</div>
+    <ul class="features"><li>Premium custom design</li><li>Enhanced animations</li><li>Interactive portfolio sections</li><li>Advanced responsive layouts</li><li>Performance and SEO review</li></ul>
+    <a class="btn btn-primary" href="#contact" data-package="Advanced">Choose Advanced ↗</a>
+   </article>
+  </div>
+  <p class="form-note" style="margin-top:20px">Hosting, domain, payment gateways, backend services and third-party subscriptions may cost extra. Confirm the complete scope and price before placing an order.</p>
+ </div>
+</section>
+
+<section class="alt" id="process">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="kicker">How it works</div>
+   <h2>From your idea to <span class="gradient">launch.</span></h2>
+   <p>A clear process helps keep the project organised from start to finish.</p>
+  </div>
+  <div class="grid-3">
+   <article class="panel reveal"><div class="process-num">01</div><h3>Discuss</h3><p>Share your business, goals, reference websites and required features.</p></article>
+   <article class="panel reveal"><div class="process-num">02</div><h3>Design & Build</h3><p>Agree on the scope, create the layout, build the pages and test key interactions.</p></article>
+   <article class="panel reveal"><div class="process-num">03</div><h3>Review & Launch</h3><p>Review the finished work, confirm the details and publish when ready.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="container">
+  <div class="section-head reveal">
+   <div class="kicker">Common questions</div>
+   <h2>Things worth <span class="gradient">knowing.</span></h2>
+  </div>
+  <div class="reveal">
+   <details class="faq-item"><summary>Can my website work on mobile phones?</summary><p>Yes. The layout is designed to adapt to mobile, tablet and desktop screens. Final testing should be done on actual devices too.</p></details>
+   <details class="faq-item"><summary>Can I host my website for free?</summary><p>Static websites can be hosted free on platforms such as GitHub Pages, subject to their terms and limits. Custom domains and some additional services may cost extra.</p></details>
+   <details class="faq-item"><summary>Will my website appear on Google immediately?</summary><p>No. SEO setup helps search engines understand your pages, but indexing and rankings are not guaranteed or immediate.</p></details>
+   <details class="faq-item"><summary>How do I request a quote?</summary><p>Fill in the project form below and continue to WhatsApp. Review the message and send it to submit your enquiry.</p></details>
+   <details class="faq-item"><summary>Do all advanced features work without a backend?</summary><p>No. Static HTML can provide the design and client-side interactions. User accounts, persistent databases and payment processing need suitable external services or a backend.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="alt" id="contact">
+ <div class="container contact-grid">
+  <div class="reveal">
+   <div class="kicker">Let's talk</div>
+   <h2>Have an idea?<br><span class="gradient">Let's build it.</span></h2>
+   <p style="color:var(--muted);font-size:14px;margin-top:16px">Tell us what you're planning. We'll use your requirements to start a project enquiry.</p>
+   <div class="contact-info">
+    <div class="contact-line"><small>Business</small><strong>TK Advanced Web Developer</strong></div>
+    <div class="contact-line"><small>WhatsApp / Phone</small><strong>+91 90162 49230</strong></div>
+    <div class="contact-line"><small>Email</small><strong>shaikhsofiya1535@gmail.com</strong></div>
+    <div class="contact-line"><small>Based in</small><strong>Ahmedabad, Gujarat, India</strong></div>
+   </div>
+  </div>
+  <div class="panel reveal">
+   <h3 style="margin-bottom:5px">Project enquiry</h3>
+   <p style="font-size:12px;color:var(--muted);margin-bottom:22px">Complete the details and continue to WhatsApp to send your message.</p>
+   <form id="projectForm">
+    <div class="field"><label for="name">Your name *</label><input id="name" name="name" required maxlength="100" placeholder="Enter your name"></div>
+    <div class="field"><label for="business">Business or brand</label><input id="business" name="business" maxlength="120" placeholder="Your business name"></div>
+    <div class="field"><label for="projectType">Website type *</label>
+     <select id="projectType" name="projectType" required>
+      <option value="">Choose a website type</option>
+      <option>Business website</option><option>Portfolio website</option><option>Product catalogue</option>
+      <option>Landing page</option><option>Online store</option><option>Website redesign</option><option>Other</option>
+     </select>
+    </div>
+    <div class="field"><label for="budget">Estimated budget</label>
+     <select id="budget" name="budget"><option value="">Choose a budget</option><option>Under ₹2,000</option><option>₹2,000–₹5,000</option><option>₹5,000–₹10,000</option><option>₹10,000+</option><option>Need guidance</option></select>
+    </div>
+    <div class="field"><label for="details">Project requirements *</label><textarea id="details" name="details" required maxlength="1500" placeholder="What should your website do?"></textarea></div>
+    <button class="btn btn-primary" type="submit">Continue to WhatsApp ↗</button>
+    <p class="form-note">Your message will open in WhatsApp. You must press Send there to submit your enquiry.</p>
+   </form>
+  </div>
+ </div>
+</section>
+
+<div class="cta">
+ <div class="container">
+  <div class="cta-inner reveal">
+   <div><h2>Ready to make your <span class="gradient">next move?</span></h2><p>Start with a clear idea. Build something that represents your brand.</p></div>
+   <a href="#contact" class="btn btn-primary">Start Your Project ↗</a>
+  </div>
+ </div>
+</div>
+</main>
+
+<footer>
+ <div class="container footer-row">
+  <a class="logo" href="#home">TK <span>ADVANCED</span></a>
+  <span>© <span id="year"></span> TK Advanced Web Developer. All rights reserved.</span>
+  <div class="footer-links"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+ </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919016249230?text=Hello%20TK%20Advanced%20Web%20Developer%2C%20I%20want%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">☏ WhatsApp Us</a>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+  menuBtn.textContent = open ? '✕' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = '☰';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const observer = ('IntersectionObserver' in window)
+ ? new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+   }, {threshold:0.12})
+ : null;
+
+document.querySelectorAll('.reveal').forEach(el => {
+  if(observer) observer.observe(el);
+  else el.classList.add('visible');
+});
+
+document.querySelectorAll('[data-package]').forEach(link => {
+  link.addEventListener('click', () => {
+    const selected = link.dataset.package;
+    const budget = document.getElementById('budget');
+    const projectType = document.getElementById('projectType');
+    document.getElementById('details').value =
+      'I am interested in the ' + selected + ' website package. Please discuss the scope and final quote with me.';
+    projectType.value = 'Business website';
+    if(selected === 'Starter') budget.value = 'Under ₹2,000';
+    if(selected === 'Professional') budget.value = '₹2,000–₹5,000';
+    if(selected === 'Advanced') budget.value = '₹5,000–₹10,000';
+  });
+});
+
+document.getElementById('projectForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  if(!form.reportValidity()) return;
+
+  const data = new FormData(form);
+  const message = [
+    'Hello TK Advanced Web Developer! I want to discuss a website project.',
+    '',
+    'Name: ' + data.get('name'),
+    'Business: ' + (data.get('business') || 'Not provided'),
+    'Website type: ' + data.get('projectType'),
+    'Estimated budget: ' + (data.get('budget') || 'Not decided'),
+    'Requirements: ' + data.get('details')
+  ].join('\n');
+
+  const url = 'https://wa.me/919016249230?text=' + encodeURIComponent(message);
+  window.open(url, '_blank', 'noopener,noreferrer');
+});
+</script>
+</body>
+</html>
