@@ -392,7 +392,204 @@ select:focus-visible {
     animation-duration: .01ms !important;
     transition-duration: .01ms !important;
   }
+
+/* ===== TK LUXURY DESIGN FINISH ===== */
+
+:root {
+  --bg: #fffdf8;
+  --panel: #ffffff;
+  --text: #211b12;
+  --muted: #716858;
+  --purple: #b58a3a;
+  --cyan: #b58a3a;
+  --pink: #e8d4a8;
+  --line: rgba(145, 110, 48, 0.22);
 }
+
+body {
+  background: #fffdf8 !important;
+  color: #211b12 !important;
+}
+
+body:before {
+  background:
+    radial-gradient(ellipse at 15% 10%, #d5ad6020, transparent 35%),
+    radial-gradient(ellipse at 90% 45%, #b58a3a12, transparent 35%);
+}
+
+header {
+  background: rgba(255, 253, 248, 0.96) !important;
+  border-bottom: 1px solid #e8dcc3 !important;
+}
+
+.logo span,
+.navlinks a:hover,
+.eyebrow,
+.project-meta,
+.process-number {
+  color: #a47b2d !important;
+}
+
+.navlinks a,
+footer a {
+  color: #514532 !important;
+}
+
+.gradient {
+  background: linear-gradient(100deg, #8d6825, #c4a15b, #8d6825);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(110deg, #d7bd80, #b58a3a) !important;
+  color: #211b12 !important;
+  border: 1px solid #b58a3a !important;
+}
+
+.btn-ghost {
+  background: #fff !important;
+  color: #514532 !important;
+  border: 1px solid #d9c7a3 !important;
+}
+
+.card,
+.dash-card {
+  background: #fff !important;
+  color: #211b12 !important;
+  border: 1px solid #e8dcc3 !important;
+  box-shadow: 0 10px 32px rgba(89, 66, 24, 0.07);
+}
+
+.card p,
+.muted,
+.stat small,
+.dash-bottom span {
+  color: #716858 !important;
+}
+
+.card h3,
+.dash-card h3,
+h1,
+h2,
+h3 {
+  color: #211b12;
+}
+
+.icon {
+  background: #f8f0df !important;
+  border: 1px solid #e8d7b4 !important;
+}
+
+.orb {
+  background: linear-gradient(135deg, #e8d4a8aa, #c7a45b55, #fff0cc88);
+}
+
+.ring {
+  border-color: #c4a15b80;
+}
+
+.ring:after {
+  background: #b58a3a;
+  box-shadow: 0 0 18px #b58a3a66;
+}
+
+.preview {
+  background: linear-gradient(135deg, #8d6825, #d7bd80, #f7ecd3);
+}
+
+.float-tag {
+  background: #fffdf8 !important;
+  color: #514532 !important;
+  border-color: #e8dcc3 !important;
+}
+
+.marquee {
+  background: #faf5e9;
+  border-color: #e8dcc3;
+}
+
+.marquee span {
+  color: #79633c !important;
+}
+
+.search-wrap input,
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  background: #fff !important;
+  color: #211b12 !important;
+  border-color: #ded2b9 !important;
+}
+
+.search-wrap input::placeholder,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #918574;
+}
+
+.filter {
+  background: #fff !important;
+  color: #514532 !important;
+  border-color: #e3d5b8 !important;
+}
+
+.filter.active {
+  background: #f6ecd5 !important;
+  color: #795b20 !important;
+  border-color: #b58a3a !important;
+}
+
+.features li {
+  color: #514532 !important;
+  border-bottom-color: #eee5d4 !important;
+}
+
+.features li:before {
+  color: #a47b2d !important;
+}
+
+.popular,
+.live {
+  color: #92702f !important;
+}
+
+.faq-question {
+  color: #211b12 !important;
+}
+
+.faq-item {
+  border-bottom-color: #e8dcc3 !important;
+}
+
+#cursor-glow {
+  background: radial-gradient(circle, #b58a3a18, transparent 68%);
+}
+
+@media (max-width: 850px) {
+  .navlinks {
+    background: #fffdf8 !important;
+    border-bottom-color: #e8dcc3 !important;
+  }
+
+  .menu {
+    color: #211b12 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-grid {
+    gap: 25px;
+  }
+
+  h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .section-head {
+    gap: 15px;
+  }
 
 </style>
 </head>
