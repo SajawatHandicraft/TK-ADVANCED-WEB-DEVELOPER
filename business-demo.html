@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nova Business - A modern business website demo.">
+  <title>Nova Business | Business Solutions</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      color: #20251f;
+      background: #fff;
+      line-height: 1.6;
+    }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 8%; border-bottom: 1px solid #eee;
+      flex-wrap: wrap; gap: 15px;
+    }
+    .logo { font-size: 25px; font-weight: 800; color: #173e31; }
+    nav a { color: #333; text-decoration: none; margin-left: 20px; }
+    .hero {
+      padding: 100px 8%; background: #f1f5ef;
+      display: grid; grid-template-columns: 1.2fr 1fr;
+      align-items: center; gap: 45px;
+    }
+    .tag {
+      color: #46735c; font-weight: bold; letter-spacing: 2px;
+      font-size: 12px; text-transform: uppercase;
+    }
+    h1 { font-size: clamp(38px, 5vw, 64px); line-height: 1.1; margin: 18px 0; }
+    .hero p { color: #626a63; max-width: 520px; margin-bottom: 25px; }
+    .btn {
+      display: inline-block; background: #173e31; color: white;
+      padding: 13px 22px; border-radius: 5px; text-decoration: none;
+      font-weight: bold;
+    }
+    .hero img {
+      width: 100%; min-height: 280px; object-fit: cover;
+      border-radius: 12px;
+    }
+    section { padding: 75px 8%; }
+    .heading { text-align: center; margin-bottom: 35px; }
+    .heading h2 { font-size: 34px; margin: 8px 0; }
+    .heading p { color: #687069; }
+    .services {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+    }
+    .card {
+      padding: 28px; border: 1px solid #e6e9e5;
+      border-radius: 10px; background: white;
+    }
+    .card .symbol { font-size: 30px; margin-bottom: 12px; }
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: #687069; font-size: 15px; }
+    .about {
+      background: #173e31; color: white; text-align: center;
+    }
+    .about p { max-width: 650px; margin: 15px auto 0; color: #e0e9e2; }
+    .contact { text-align: center; background: #f7f8f5; }
+    .contact p { margin: 12px 0 24px; color: #687069; }
+    footer { padding: 25px; text-align: center; background: #102d23; color: white; }
+    .demo-note { font-size: 12px; color: #687069; text-align: center; padding: 10px; }
+    @media (max-width: 750px) {
+      .hero { grid-template-columns: 1fr; padding-top: 65px; }
+      .services { grid-template-columns: 1fr; }
+      nav { padding: 18px 5%; }
+      nav a { margin-left: 8px; font-size: 14px; }
+      section { padding: 55px 6%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">NOVA.</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="tag">Business solutions</div>
+        <h1>Build a Better Future for Your Business.</h1>
+        <p>We help businesses improve their digital presence with thoughtful strategy, modern design and practical solutions.</p>
+        <a class="btn" href="#contact">Let's Talk ↗</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Modern business workspace">
+    </section>
+
+    <section id="services">
+      <div class="heading">
+        <div class="tag">What we do</div>
+        <h2>Solutions That Move You Forward</h2>
+        <p>Simple, modern services designed around business goals.</p>
+      </div>
+      <div class="services">
+        <article class="card">
+          <div class="symbol">✦</div>
+          <h3>Business Strategy</h3>
+          <p>Plan your next steps with clear goals, practical ideas and a focus on growth.</p>
+        </article>
+        <article class="card">
+          <div class="symbol">◇</div>
+          <h3>Web Design</h3>
+          <p>Create a professional online presence with a clean and responsive website.</p>
+        </article>
+        <article class="card">
+          <div class="symbol">↗</div>
+          <h3>Digital Growth</h3>
+          <p>Make it easier for potential customers to discover and understand your business.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="tag">About Nova</div>
+      <h2>Ideas Into Progress.</h2>
+      <p>Good business starts with understanding people and solving real problems. Nova is a sample business concept focused on clarity, creativity and a better customer experience.</p>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="tag">Get in touch</div>
+      <h2>Have a Project in Mind?</h2>
+      <p>This is a demo contact section. Add your real business contact details before using this design for a client.</p>
+      <a class="btn" href="mailto:hello@example.com">Email Us ↗</a>
+    </section>
+  </main>
+
+  <p class="demo-note">Nova Business is a demonstration concept created for a web design portfolio.</p>
+  <footer>© 2026 Nova Business · Demo Website</footer>
+
+</body>
+</html>
