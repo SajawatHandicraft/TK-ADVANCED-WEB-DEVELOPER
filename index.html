@@ -591,6 +591,44 @@ h3 {
     gap: 15px;
   }
 
+/* ===== FIX TOP NAVIGATION MENU ===== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  overflow: visible;
+}
+
+header .navlinks {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+header .navlinks a {
+  color: #514532 !important;
+  text-decoration: none;
+}
+
+header .navlinks a:hover {
+  color: #a47b2d !important;
+}
+
+/* Desktop navigation */
+@media (min-width: 851px) {
+  header .navlinks {
+    display: flex !important;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+/* Mobile navigation */
+@media (max-width: 850px) {
+  header .navlinks a {
+    color: #514532 !important;
+  }
+
 </style>
 </head>
 <body>
