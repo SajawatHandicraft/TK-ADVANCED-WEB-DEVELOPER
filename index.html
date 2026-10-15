@@ -196,16 +196,25 @@ font-size:11px;color:var(--cyan)}
   margin-right: 8px;
 }
 ```css
+
+.old-price {
+  display: inline-block;
+  color: #a0a0a0;
+  font-size: 15px;
+  text-decoration: line-through;
+  text-decoration-line: line-through;
+  text-decoration-color: #a0a0a0;
+  margin-right: 8px;
+}
+
 .price .old-price {
   display: inline-block !important;
   text-decoration: line-through !important;
-  text-decoration-line: line-through !important;
-  text-decoration-color: #a0a0a0 !important;
   color: #a0a0a0 !important;
   font-size: 15px !important;
   margin-right: 8px;
 }
-```
+
 .discount-badge {
   display: inline-block;
   background: #176b45;
@@ -215,6 +224,7 @@ font-size:11px;color:var(--cyan)}
   border-radius: 20px;
   vertical-align: middle;
 }
+
 ```
   .process{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .process .card{padding:21px}
