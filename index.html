@@ -71,8 +71,27 @@ header{
   border-bottom:1px solid var(--line);
 }
 .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font:700 22px "Space Grotesk",sans-serif;letter-spacing:-1px}
-.logo span{color:var(--cyan)}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.logo .logo-text {
+  color: #d2ad5c;
+  font: 700 18px "Space Grotesk", sans-serif;
+  letter-spacing: 0;
+}
+
 .navlinks{display:flex;gap:26px;align-items:center}
 .navlinks a{font-size:13px;color:#d3d1e8;transition:.25s}
 .navlinks a:hover{color:var(--cyan)}
@@ -850,7 +869,10 @@ nav a:hover {
 
 <header>
  <div class="container nav">
-  <a class="logo" href="#home">TK<span>.</span>ADVANCED</a>
+  <a class="logo" href="#home">
+  <img src="tk-logo.png" alt="TK Advanced Web Developer Logo">
+  <span class="logo-text">TK ADVANCED</span>
+</a>
   <nav class="navlinks" id="navlinks">
    <a href="#home">Home</a><a href="#services">Services</a>
    <a href="#work">Portfolio</a><a href="#pricing">Pricing</a>
