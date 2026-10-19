@@ -1438,25 +1438,42 @@ $$(".faq-question").forEach(btn=>btn.addEventListener("click",()=>{
 $$(".order").forEach(link=>link.addEventListener("click",()=>{
   $("#details").value="I am interested in the "+link.dataset.plan+" package.";
 }));
-
+document.querySelectorAll(".order").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".order").forEach(item => {
+      item.classList.remove("selected");
+    });
+    button.classList.add("selected");
+  });
+});
 // WhatsApp enquiry form — no server/database required
-$("#contactForm").addEventListener("submit",e=>{
+
+$("#contactForm").addEventListener("submit", e => {
   e.preventDefault();
-  const name=$("#name").value.trim();
-  const business=$("#business").value.trim();
-  const service=$("#service").value;
-  const details=$("#details").value.trim();
-  if(!name||!service||!details)return;
-  const message=[
+
+  const name = $("#name").value.trim();
+  const business = $("#business").value.trim();
+  const service = $("#service").value;
+  const selectedPlan =
+    document.querySelector(".order.selected")?.dataset.plan || "";
+  const details = $("#details").value.trim();
+
+  if (!name || !service || !details) return;
+
+  const message = [
     "Hello TK Advanced Web Developer!",
     "Website enquiry",
-    "Name: "+name,
-    "Business: "+(business||"Not provided"),
-    "Service: "+service,
-    "Project details: "+details
+    "Name: " + name,
+    "Business: " + (business || "Not provided"),
+    "Service: " + service,
+    "Selected package: " + (selectedPlan || "Not selected"),
+    "Project details: " + details
   ].join("\n");
-  const url="https://wa.me/919016249230?text="+encodeURIComponent(message);
-  window.open(url,"_blank","noopener,noreferrer");
+
+  const url =
+    "https://wa.me/919016249230?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank", "noopener,noreferrer");
 });
 </script>
 </body>
